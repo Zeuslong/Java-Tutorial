@@ -8,13 +8,13 @@ import java.util.function.IntFunction;
 /**
  * {@link java.util.stream.Stream#toArray()} 使用方法的参考
  *
- * toArray 方法会把一个 {@link java.util.stream.Stream} 对象当中包含的所有元素
+ * ToArray 方法会把一个 {@link java.util.stream.Stream} 对象当中包含的所有元素
  * 都转化成一个数组对象。
  *
  * @since 1.8
  * @author hanyuxiao
  */
-public class toArray {
+public class ToArray {
     /**
      * 通过 {} 的方式来构建一个数组，然后再通过 {@link java.util.Arrays#asList(Object[])}
      * 构建一个 {@link java.util.List}，再通过 {@link java.util.List} 对象获取到

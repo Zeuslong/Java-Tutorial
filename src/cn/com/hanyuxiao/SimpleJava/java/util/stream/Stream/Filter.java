@@ -8,14 +8,14 @@ import java.util.stream.Stream;
 /**
  * {@link java.util.stream.Stream#filter} 方法使用示例
  *
- * filter 方法是一个过滤不符合某些条件的元素的一个方法，它通过传入的 lambda 表达来
+ * Filter 方法是一个过滤不符合某些条件的元素的一个方法，它通过传入的 lambda 表达来
  * 对元素进行判断，然后把符合条件的元素封装成一个新的 {@link java.util.stream.Stream}
  * 并返回。
  *
  * @since 1.8
  * @author hanyuxiao
  */
-public class filter {
+public class Filter {
     /**
      * 通过 {@link java.util.stream.Stream#filter} 这样一个方法来筛选出一个 list 当中
      * 所有大于 5 的数据，并且用这个方法返回的 {@link java.util.stream.Stream#forEach}
