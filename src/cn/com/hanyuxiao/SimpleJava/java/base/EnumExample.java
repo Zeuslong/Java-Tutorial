@@ -51,17 +51,31 @@ public class EnumExample {
     }
 
     public static void main(String[] args) {
-        // 输出枚举类型-男人的 toString 方法
+        /**
+         * 分别输出 Human 枚举当中的枚举，这里默认会调用枚举的 toString() 方法
+         */
         System.out.println(Human.man);
-        // 输入枚举类型-男人的书面含义
-        System.out.println(Human.man.getDescription());
-        // 输出枚举类型-女人的 toString 方法
         System.out.println(Human.woman);
-        // 输入枚举类型-女人的书面含义
+
+        /**
+         * 分别调用枚举当中自定义的方法
+         */
+        System.out.println(Human.man.getDescription());
         System.out.println(Human.woman.getDescription());
 
-        // 相等性判断
+        /**
+         * 两种匹配枚举是否相等的办法
+         * 在第一种方法是因为所有的枚举都继承了 {@link java.lang.Enum} 这个类
+         * 第二个方法是因为所有的枚举在内存当中是单一的，所以可以直接用 == 判断
+         */
         System.out.println(Human.man.equals(Human.man));
         System.out.println(Human.man == Human.man);
+
+        /**
+         * 遍历枚举当中的所有属性
+         */
+        for (Human e : Human.values()) {
+            System.out.println(e);
+        }
     }
 }
