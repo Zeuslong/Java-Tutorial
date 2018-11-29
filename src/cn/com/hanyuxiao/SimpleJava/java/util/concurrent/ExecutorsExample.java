@@ -23,6 +23,8 @@ public class ExecutorsExample {
         ExecutorsExample executorsExample = new ExecutorsExample();
         executorsExample.newSingleThreadExecutor();
         executorsExample.newFixedThreadPool();
+        executorsExample.newCachedThreadPool();
+        executorsExample.newScheduledThreadPool();
     }
 
     /**
@@ -74,7 +76,7 @@ public class ExecutorsExample {
     }
 
     /**
-     * 支持定时以及周期性执行任务的线程池。
+     * 支持定时以及周期性执行任务的线程池，在获取线程池之后要自己指定线程池的执行周期与定时时间。
      *
      * Executors 提供了两种创建方式
      */
