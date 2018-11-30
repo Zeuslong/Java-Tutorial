@@ -1,9 +1,6 @@
 package cn.com.hanyuxiao.SimpleJava.java.util.concurrent;
 
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.*;
 
 /**
  * {@link java.util.concurrent.Executors} 使用帮助
@@ -32,6 +29,8 @@ public class ExecutorsExample {
      * 尽管只有一个线程串行执行，单线程线程池也是有意义的，因为是将这个单线程的生命周期委托
      * 给了线程池管理。
      *
+     * 使用的线程池是 {@link Executors.FinalizableDelegatedExecutorService}
+     *
      * Executors 提供了两种 SingleThreadExecutor 的创建方式。
      */
     public void newSingleThreadExecutor() {
@@ -46,6 +45,8 @@ public class ExecutorsExample {
     /**
      * 固定线程数量的可复用线程池，这个线程池当中的线程会一直保持存活状态，只有当线程
      * 被显示的中断才会被回收。
+     *
+     * 使用的线程池是 {@link ThreadPoolExecutor}
      *
      * Executors 提供了两种 FixedThreadPool 的创建方式
      */
@@ -64,6 +65,8 @@ public class ExecutorsExample {
      * 创建一个可缓存的线程池。如果线程池的大小超过了核心线程数量(默认为 0)，那么就会回收部分空闲（60秒不执行任务）的线程，
      * 当任务数增加时，此线程池又可以创建新线程来处理任务。
      *
+     * 使用的线程池是 {@link ThreadPoolExecutor}
+     *
      * Executors 提供了两种 CachedThreadPool 创建方式
      */
     public void newCachedThreadPool() {
@@ -77,6 +80,8 @@ public class ExecutorsExample {
 
     /**
      * 支持定时以及周期性执行任务的线程池，在获取线程池之后要自己指定线程池的执行周期与定时时间。
+     *
+     * 使用的线程池是 {@link ScheduledThreadPoolExecutor}
      *
      * Executors 提供了两种创建方式
      */
