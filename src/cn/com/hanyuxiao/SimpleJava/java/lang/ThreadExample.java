@@ -18,7 +18,7 @@ public class ThreadExample {
      * 2. 新创建 Example 的对象
      * 3. 调用 Example 对象的 start() 方法
      */
-    public void start() {
+    private void start() {
         // 继承线程
         class Example extends Thread {
             // 重写 run() 方法

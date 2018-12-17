@@ -35,7 +35,7 @@ public class StreamExample {
      * @since 1.8
      * @author hanyuxiao
      */
-    public void filter () {
+    private void filter() {
         /**
          * 通过 {@link java.util.stream.Stream#filter} 这样一个方法来筛选出一个 list 当中
          * 所有大于 5 的数据，并且用这个方法返回的 {@link java.util.stream.Stream#forEach}
@@ -59,7 +59,7 @@ public class StreamExample {
      * @since 1.8
      * @author hanyuxiao
      */
-    public void map () {
+    private void map() {
         String[] lowerCaseArray = {"hello", "world"};
         List<String> lowerCaseStr = new ArrayList<>(Arrays.asList(lowerCaseArray));
 
@@ -79,7 +79,7 @@ public class StreamExample {
      * @since 1.8
      * @author hanyuxiao
      */
-    public void toArray () {
+    private void toArray() {
         /**
          * 通过 {} 的方式来构建一个数组，然后再通过 {@link java.util.Arrays#asList(Object[])}
          * 构建一个 {@link java.util.List}，再通过 {@link java.util.List} 对象获取到
@@ -91,8 +91,8 @@ public class StreamExample {
 
         Integer[] newArray = listOfInteger.stream().toArray(Integer[]::new);
 
-        for (int i = 0; i < newArray.length; i++) {
-            System.out.printf("%d ", newArray[i]);
+        for (Integer integer : newArray) {
+            System.out.printf("%d ", integer);
         }
     }
 }

@@ -36,7 +36,7 @@ public class QueueExample {
      *
      * 如果元素由于容量原因没有成功插入，那么就会抛出异常 {@link IllegalStateException}。
      */
-    public void addE() {
+    private void addE() {
         Queue<String> queue = new LinkedList<>();
         // 使用 add 插入元素
         queue.add("hello world");
@@ -49,7 +49,7 @@ public class QueueExample {
      *
      * 与 add 方法的区别在于，如果插入失败不会抛出异常，而是会返回 false。
      */
-    public void offerE() {
+    private void offerE() {
         Queue<String> queue = new LinkedList<>();
         // 使用 offer 插入元素
         queue.offer("hello world");
@@ -62,7 +62,7 @@ public class QueueExample {
      *
      * 如果队列为空，那么执行这个方法的时候就会抛出一个异常 {@link NoSuchElementException}。
      */
-    public void removeE() {
+    private void removeE() {
         // 初始化
         Queue<String> queue = new LinkedList<>(Arrays.asList("hello", "world"));
         // 移除顶端的元素
@@ -83,7 +83,7 @@ public class QueueExample {
      *
      * 如果队列为空，那么执行这个方法的时候不会抛出异常，而是返回 null。
      */
-    public void pollE() {
+    private void pollE() {
         // 初始化一个队列
         Queue<String> queue = new LinkedList<>(Arrays.asList("hello", "world"));
         // 移除顶端的元素
@@ -100,7 +100,7 @@ public class QueueExample {
      *
      * 如果队列为空，获取失败的时候会抛出一个异常 {@link NoSuchElementException}。
      */
-    public void elementE() {
+    private void elementE() {
         Queue<String> queue = new LinkedList<>(Collections.singleton("hello world"));
         // 查看顶端元素
         System.out.printf("顶端元素为 %s \n", queue.element());
@@ -119,7 +119,7 @@ public class QueueExample {
      *
      * 如果队列为空，获取失败的时候，会返回 null。
      */
-    public void peekE() {
+    private void peekE() {
         Queue<String> queue = new LinkedList<>(Collections.singleton("hello world"));
         // 查看顶端元素
         System.out.printf("顶端元素为 %s \n", queue.peek());

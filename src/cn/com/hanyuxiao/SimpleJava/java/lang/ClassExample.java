@@ -16,7 +16,7 @@ public class ClassExample {
      * 这个方法为创建 Class 这个类的对象提供参考，这里创建一个 Person
      * 类的 Class 对象。这三个方法创建出来的 Class 对象是同一个对象。
      */
-    public void createClassObject() {
+    private void createClassObject() {
         // 通过类创建
         Class personClassA = Person.class;
 

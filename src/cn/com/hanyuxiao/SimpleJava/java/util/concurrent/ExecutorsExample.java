@@ -29,11 +29,11 @@ public class ExecutorsExample {
      * 尽管只有一个线程串行执行，单线程线程池也是有意义的，因为是将这个单线程的生命周期委托
      * 给了线程池管理。
      *
-     * 使用的线程池是 {@link Executors.FinalizableDelegatedExecutorService}
+     * 使用的线程池是 Executors.FinalizableDelegatedExecutorService
      *
      * Executors 提供了两种 SingleThreadExecutor 的创建方式。
      */
-    public void newSingleThreadExecutor() {
+    private void newSingleThreadExecutor() {
         // 无参创建方式
         ExecutorService singleExecutorServiceDefault = Executors.newSingleThreadExecutor();
 
@@ -50,7 +50,7 @@ public class ExecutorsExample {
      *
      * Executors 提供了两种 FixedThreadPool 的创建方式
      */
-    public void newFixedThreadPool() {
+    private void newFixedThreadPool() {
         int threadNumber = 10;
 
         // 无参创建方式
@@ -69,7 +69,7 @@ public class ExecutorsExample {
      *
      * Executors 提供了两种 CachedThreadPool 创建方式
      */
-    public void newCachedThreadPool() {
+    private void newCachedThreadPool() {
         // 无参创建方式
         ExecutorService cachedThreadPoolDefault = Executors.newCachedThreadPool();
 
@@ -85,7 +85,7 @@ public class ExecutorsExample {
      *
      * Executors 提供了两种创建方式
      */
-    public void newScheduledThreadPool() {
+    private void newScheduledThreadPool() {
         int corePoolSize = 10;
 
         // 无参创建方式

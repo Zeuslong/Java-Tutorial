@@ -10,6 +10,7 @@ public class RunnableExample {
     public static void main(String[] args) {
         RunnableExample runnableExample = new RunnableExample();
         runnableExample.run();
+        runnableExample.runNoImplements();
     }
 
     /**
@@ -19,7 +20,7 @@ public class RunnableExample {
      * 3. 创建 Thread 对象，并用 Example 对象进行初始化
      * 4. 启动线程对象
      */
-    public void run() {
+    private void run() {
         // 实现 Runnable 接口的 run 方法
         class Example implements Runnable {
             @Override
@@ -39,7 +40,7 @@ public class RunnableExample {
      * 这种使用 {@link java.lang.Runnable} 的方法是一种简便的写法，但是
      * 不是很适合在复杂的环境当中使用，适合于在一次性任务当中使用。
      */
-    public void runNoImplements() {
+    private void runNoImplements() {
         // 在创建线程的时候，直接把 Runnable 当作参数传入，并在其中实现 run 方法
         Thread thread = new Thread(new Runnable() {
             @Override

@@ -21,7 +21,7 @@ public class ExecutorServiceExample {
      * {@link ExecutorService#submit(Runnable)} 的一个简单的使用示例，在这个示例当中，创建了一个
      * 线程池，然后往线程池当中提交了 10 个任务让线程池执行
      */
-    public void submit() {
+    private void submit() {
         class Task implements Runnable {
             @Override
             public void run() {
