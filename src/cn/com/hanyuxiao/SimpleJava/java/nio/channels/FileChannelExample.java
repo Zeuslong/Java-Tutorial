@@ -1,5 +1,7 @@
 package cn.com.hanyuxiao.SimpleJava.java.nio.channels;
 
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
 import java.nio.channels.FileChannel;
@@ -22,6 +24,7 @@ public class FileChannelExample {
     public static void main(String[] args) {
         FileChannelExample example = new FileChannelExample();
         example.create();
+        example.createByFileOutputStream();
         example.writeSingleBuffer();
     }
 
@@ -31,6 +34,8 @@ public class FileChannelExample {
      *
      * 开头的一段代码，是负责定位文件写入的数据的，可以参考 {@link ClassLoader#getResource(String)}
      * 这个方法的说明文档。
+     *
+     * @since 1.7
      */
     private void create() {
         try {
@@ -49,6 +54,26 @@ public class FileChannelExample {
             // 创建 FileChannel
             FileChannel channel = FileChannel.open(target, permission);
         } catch (IOException | NullPointerException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * 这是一种非常简单的 {@link FileChannel} 创建的方法，从 jdk 1.4 以上就可以开始使用。
+     *
+     * @since 1.4
+     *
+     * todo #create() 与 #createByFileOutputStream() 两者创建的区别？
+     */
+    private void createByFileOutputStream() {
+        try {
+            String pathStr = Objects.requireNonNull(
+                    FileChannelExample.class.getClassLoader()
+                            .getResource("cn/com/hanyuxiao/SimpleJava/java/nio/channels/FileChannelExample.class"))
+                                     .getPath();
+
+            FileChannel channel = new FileOutputStream(pathStr).getChannel();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
     }
