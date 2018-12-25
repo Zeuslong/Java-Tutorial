@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.SimpleJava.java.nio.channels;
+package cn.com.hanyuxiao.simple.java.nio.channels;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -40,15 +40,15 @@ public class FileChannelExample {
     private void create() {
         try {
             // 查找文件路径
-            String pathStr = Objects.requireNonNull(FileChannelExample.class.getClassLoader()
-                            .getResource("cn/com/hanyuxiao/SimpleJava/java/nio/channels/FileChannelExample.class"))
+            String pathStr = Objects.requireNonNull(
+                    FileChannelExample.class.getClassLoader()
+                            .getResource("cn/com/hanyuxiao/simple/java/nio/channels/FileChannelExample.class"))
                                      .getPath();
             Path target = FileSystems.getDefault().getPath(pathStr);
 
             // 创建权限
             Set<OpenOption> permission = new HashSet<>();
             permission.add(StandardOpenOption.CREATE);
-            permission.add(StandardOpenOption.CREATE_NEW);
             permission.add(StandardOpenOption.WRITE);
 
             // 创建 FileChannel
@@ -59,7 +59,14 @@ public class FileChannelExample {
     }
 
     /**
-     * 这是一种非常简单的 {@link FileChannel} 创建的方法，从 jdk 1.4 以上就可以开始使用。
+     * 这是一种非常简单的 {@link FileChannel} 创建的方法，从 jdk 1.4 以上就可以开始使用。使用这个方法读取 FileChannelExample.class
+     * 文件的时候这个 class 文件会被清空，就会导致 java.lang.ClassFormatError: Truncated class file 异常。
+     *
+     * #create() 与 #createByFileOutputStream 创建方式的区别：
+     *
+     *     1. 如果文件存在，#createByFileOutputStream 一定会清除这个文件当中的所有的内容，而
+     *     #create() 创建方式则要看设置的权限。
+     *     2. #create() 方法能够灵活的赋予 {@link FileChannel} 权限，
      *
      * @since 1.4
      *
@@ -69,7 +76,7 @@ public class FileChannelExample {
         try {
             String pathStr = Objects.requireNonNull(
                     FileChannelExample.class.getClassLoader()
-                            .getResource("cn/com/hanyuxiao/SimpleJava/java/nio/channels/FileChannelExample.class"))
+                            .getResource("cn/com/hanyuxiao/simple/java/nio/channels/FileChannelExample.class"))
                                      .getPath();
 
             FileChannel channel = new FileOutputStream(pathStr).getChannel();
@@ -87,7 +94,7 @@ public class FileChannelExample {
     private void writeSingleBuffer() {
 
         String pathRoot = Objects.requireNonNull(FileChannelExample.class.getClassLoader().getResource("")).getPath();
-        Path target = FileSystems.getDefault().getPath(pathRoot + "cn/com/hanyuxiao/SimpleJava/java/nio/channels/hello.txt");
+        Path target = FileSystems.getDefault().getPath(pathRoot + "cn/com/hanyuxiao/simple/java/nio/channels/hello.txt");
 
         FileChannel channel = null;
 
@@ -95,14 +102,14 @@ public class FileChannelExample {
             // 创建权限
             Set<OpenOption> permission = new HashSet<>();
             permission.add(StandardOpenOption.CREATE);
-            permission.add(StandardOpenOption.CREATE_NEW);
             permission.add(StandardOpenOption.WRITE);
+            permission.add(StandardOpenOption.APPEND);
 
             // 创建 FileChannel
             channel = FileChannel.open(target, permission);
 
             // 写入数据
-            String args = "Hello World";
+            String args = "Hello World \n";
             channel.write(ByteBuffer.wrap(args.getBytes()));
             System.out.printf("数据已写入到：%s\n", target.toString());
 

@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.SimpleJava.java.util;
+package cn.com.hanyuxiao.simple.java.util;
 
 import java.util.Arrays;
 import java.util.Collections;

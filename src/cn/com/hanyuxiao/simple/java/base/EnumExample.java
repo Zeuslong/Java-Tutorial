@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.SimpleJava.java.base;
+package cn.com.hanyuxiao.simple.java.base;
 
 /**
  * 这个是 Java 基本语法当中 enum 类的书写规范
