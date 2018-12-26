@@ -64,13 +64,12 @@ public class FileChannelExample {
      *
      * #create() 与 #createByFileOutputStream 创建方式的区别：
      *
-     *     1. 如果文件存在，#createByFileOutputStream 一定会清除这个文件当中的所有的内容，而
-     *     #create() 创建方式则要看设置的权限。
-     *     2. #create() 方法能够灵活的赋予 {@link FileChannel} 权限，
+     *     1. 通过 FileOutputStream 来创建 FileChannel 的时候会根据 FileOutPutStream 初始化的属性来决定 FileChannel 的行为，
+     *     例如：如果 FileOutputStream 初始化为 append = false 那么在打开文件的时候，一定会清空原本文件当中的内容，所以要对
+     *     FileOutputStream 有一定的掌握程度。
+     *     2. #create() 方法能够灵活的赋予 {@link FileChannel} 权限。
      *
      * @since 1.4
-     *
-     * todo #create() 与 #createByFileOutputStream() 两者创建的区别？
      */
     private void createByFileOutputStream() {
         try {
@@ -79,7 +78,7 @@ public class FileChannelExample {
                             .getResource("cn/com/hanyuxiao/simple/java/nio/channels/FileChannelExample.class"))
                                      .getPath();
 
-            FileChannel channel = new FileOutputStream(pathStr).getChannel();
+            FileChannel channel = new FileOutputStream(pathStr, true).getChannel();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
