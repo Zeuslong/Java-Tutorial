@@ -22,5 +22,6 @@ public class PathExample {
     private void create() {
         String str = "/hello.txt";
         Path path = FileSystems.getDefault().getPath(str);
+        System.out.printf("文件地址为 %s", path);
     }
 }
