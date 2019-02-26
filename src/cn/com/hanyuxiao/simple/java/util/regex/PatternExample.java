@@ -1,5 +1,6 @@
 package cn.com.hanyuxiao.simple.java.util.regex;
 
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
@@ -9,6 +10,7 @@ import java.util.regex.Pattern;
  *
  * 有一些值得参考的网站：
  *   1. http://www.runoob.com/java/java-regular-expressions.html
+ *   2. http://tool.oschina.net/uploads/apidocs/jquery/regexp.html
  *
  * @since 1.8
  */
@@ -23,10 +25,15 @@ public class PatternExample {
      * 写的一个类似于 hello world 的程序。这个程序给了一个 hello world 字符串，然后
      * 通过一个正则表达式来匹配查找 hello world 字符串当中是否包含了 hello 这个子字符串。
      */
-    public void hello() {
+    private void hello() {
         String context = "hello world";
-        String pattern = ".*hello.*";
-        System.out.println(context + " 当中包含了 hello ? " + Pattern.matches(pattern, context));
+        String regex = ".*hello.*";
+        System.out.println(context + " 当中包含了 hello ? " + Pattern.matches(regex, context));
     }
+
+    /*
+      以下都是示例，为了能够展示清楚，方法的命名非常的不规范，每一个示例都会有详尽的说明，通过示例来入门是
+      一种非常好的方式。
+     */
 
 }
