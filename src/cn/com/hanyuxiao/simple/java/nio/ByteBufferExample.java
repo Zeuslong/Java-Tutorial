@@ -5,7 +5,7 @@ import java.nio.ByteBuffer;
 /**
  * {@link java.nio.ByteBuffer} 的 example。
  *
- * ByteBuffer 有两个实现子类：{@link java.nio.HeapByteBuffer} 与 {@link java.nio.DirectByteBuffer} 两个，
+ * ByteBuffer 有两个实现子类：{@see java.nio.HeapByteBuffer} 与 {@see java.nio.DirectByteBuffer} 两个，
  * 两者的区别在于：HeapByteBuffer 是分配在堆上面的 ByteBuffer，而 DirectByteBuffer 是分配在对外内村上的不受 GC
  * 来控制；其次 DirectByteBuffer 创建于销毁的代价比较大；但是 DirectByteBuffer 的读写速度又会快于 HeapByteBuffer。
  *
@@ -22,7 +22,7 @@ public class ByteBufferExample {
     }
 
     /**
-     * 创建 ByteBuffer 的方法，在 ByteBuffer 当中定义了两种创建方法，这种创建方法返回的是 {@link java.nio.HeapByteBuffer}
+     * 创建 ByteBuffer 的方法，在 ByteBuffer 当中定义了两种创建方法，这种创建方法返回的是 {@see java.nio.HeapByteBuffer}
      * 这个子类。在 HeapByteBuffer 当中，存储数据的是一个数组，也就是继承了 ByteBuffer 当中的数组属性。
      */
     private void allocate() {
@@ -32,7 +32,7 @@ public class ByteBufferExample {
     }
 
     /**
-     * 创建 ByteBuffer 的方法，这种创建方法返回的是 {@link java.nio.DirectByteBuffer} 子类。
+     * 创建 ByteBuffer 的方法，这种创建方法返回的是 {@see java.nio.DirectByteBuffer} 子类。
      * 在 DirectByteBuffer 当中的构造方法当中会用 {@link sun.misc.Unsafe} 在对外内存分配空间，
      * 然后存放于查询操作都是通过这个类来做的。
      */
