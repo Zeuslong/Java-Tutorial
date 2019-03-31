@@ -21,12 +21,13 @@ public class ReentrantLockExample {
      * 锁的一个非常基本的用法，也是使用的一个最佳实践。
      */
     private void lock() {
-        // 上锁
+        // 上锁。
         lock.lock();
         try {
+            // 在 try 模块当中写业务代码。
             System.out.println("hello world");
         } finally {
-            // 释放锁的位置
+            // 释放锁的位置。
             lock.unlock();
         }
     }
