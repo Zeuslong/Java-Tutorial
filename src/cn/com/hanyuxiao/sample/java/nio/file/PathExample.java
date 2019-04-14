@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.simple.java.nio.file;
+package cn.com.hanyuxiao.sample.java.nio.file;
 
 import java.nio.file.FileSystems;
 import java.nio.file.Path;

@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.simple.java.io;
+package cn.com.hanyuxiao.sample.java.io;
 
 /**
  * 这里主要是非常常见的 System.out.println() 的一些用法的记录。这里的方法可能命名非常不规范，但是

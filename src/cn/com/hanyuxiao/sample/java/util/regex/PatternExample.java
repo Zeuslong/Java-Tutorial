@@ -1,6 +1,5 @@
-package cn.com.hanyuxiao.simple.java.util.regex;
+package cn.com.hanyuxiao.sample.java.util.regex;
 
-import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**

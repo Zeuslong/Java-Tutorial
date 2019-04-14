@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.simple.java.lang;
+package cn.com.hanyuxiao.sample.java.lang;
 
 import java.io.PrintStream;
 

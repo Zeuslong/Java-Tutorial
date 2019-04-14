@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.simple.java.nio.channels;
+package cn.com.hanyuxiao.sample.java.nio.channels;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -42,7 +42,7 @@ public class FileChannelExample {
             // 查找文件路径
             String pathStr = Objects.requireNonNull(
                     FileChannelExample.class.getClassLoader()
-                            .getResource("cn/com/hanyuxiao/simple/java/nio/channels/FileChannelExample.class"))
+                            .getResource("cn/com/hanyuxiao/sample/java/nio/channels/FileChannelExample.class"))
                                      .getPath();
             Path target = FileSystems.getDefault().getPath(pathStr);
 
@@ -75,7 +75,7 @@ public class FileChannelExample {
         try {
             String pathStr = Objects.requireNonNull(
                     FileChannelExample.class.getClassLoader()
-                            .getResource("cn/com/hanyuxiao/simple/java/nio/channels/FileChannelExample.class"))
+                            .getResource("cn/com/hanyuxiao/sample/java/nio/channels/FileChannelExample.class"))
                                      .getPath();
 
             FileChannel channel = new FileOutputStream(pathStr, true).getChannel();
@@ -93,7 +93,7 @@ public class FileChannelExample {
     private void writeSingleBuffer() {
 
         String pathRoot = Objects.requireNonNull(FileChannelExample.class.getClassLoader().getResource("")).getPath();
-        Path target = FileSystems.getDefault().getPath(pathRoot + "cn/com/hanyuxiao/simple/java/nio/channels/hello.txt");
+        Path target = FileSystems.getDefault().getPath(pathRoot + "cn/com/hanyuxiao/sample/java/nio/channels/hello.txt");
 
         FileChannel channel = null;
 

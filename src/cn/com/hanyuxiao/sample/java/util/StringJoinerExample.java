@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.simple.java.util;
+package cn.com.hanyuxiao.sample.java.util;
 
 import java.util.StringJoiner;
 
