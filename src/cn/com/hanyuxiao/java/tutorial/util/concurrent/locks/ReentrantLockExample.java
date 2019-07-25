@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.util.concurrent.locks;
+package cn.com.hanyuxiao.java.tutorial.util.concurrent.locks;
 
 import java.util.concurrent.locks.ReentrantLock;
 

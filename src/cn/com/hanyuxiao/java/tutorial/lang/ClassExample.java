@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.lang;
+package cn.com.hanyuxiao.java.tutorial.lang;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
@@ -44,7 +44,7 @@ public class ClassExample {
 
         try {
             // 通过 Class.forName(String className)  方法创建，可能会产生异常
-            classC = Class.forName("cn.com.hanyuxiao.sample.java.lang.ClassExample");
+            classC = Class.forName("cn.com.hanyuxiao.java.tutorial.lang.ClassExample");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         }

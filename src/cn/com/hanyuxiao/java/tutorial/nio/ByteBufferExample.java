@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.nio;
+package cn.com.hanyuxiao.java.tutorial.nio;
 
 import java.nio.ByteBuffer;
 

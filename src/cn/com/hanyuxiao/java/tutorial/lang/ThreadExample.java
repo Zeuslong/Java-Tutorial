@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.lang;
+package cn.com.hanyuxiao.java.tutorial.lang;
 
 /**
  * {@link java.lang.Thread} 的使用示例

@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.util.stream;
+package cn.com.hanyuxiao.java.tutorial.util.stream;
 
 import java.util.ArrayList;
 import java.util.Arrays;

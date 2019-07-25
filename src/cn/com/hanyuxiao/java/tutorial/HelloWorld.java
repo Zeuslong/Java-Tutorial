@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java;
+package cn.com.hanyuxiao.java.tutorial;
 
 /**
  * 经典代码 hello world

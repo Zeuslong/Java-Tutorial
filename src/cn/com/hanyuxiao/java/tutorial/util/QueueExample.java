@@ -1,4 +1,4 @@
-package cn.com.hanyuxiao.sample.java.util;
+package cn.com.hanyuxiao.java.tutorial.util;
 
 import java.util.Arrays;
 import java.util.Collections;
