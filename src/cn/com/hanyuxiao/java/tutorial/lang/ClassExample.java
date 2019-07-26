@@ -1,7 +1,9 @@
 package cn.com.hanyuxiao.java.tutorial.lang;
 
+import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
+import java.net.URL;
 
 /**
  * 这里是 {@link java.lang.Class} 这个类的一个获取与使用的方法，其中包括了大部分最常见的方法的使用。
@@ -27,6 +29,7 @@ public class ClassExample {
         classExample.getMethodObjectList();
         classExample.getFieldObject();
         classExample.getFieldObjectList();
+        classExample.gerResource();
     }
 
     /**
@@ -151,4 +154,12 @@ public class ClassExample {
         System.out.println("Hello" + name);
     }
 
+    /**
+     * 获取当前类路径。
+     */
+    private void gerResource() {
+        URL url = this.getClass().getResource("");
+        String path = url.getPath();
+        System.out.println(path);
+    }
 }
