@@ -1,6 +1,5 @@
 package cn.com.hanyuxiao.java.tutorial.lang;
 
-import java.io.File;
 import java.lang.reflect.Field;
 import java.lang.reflect.Method;
 import java.net.URL;
