@@ -74,7 +74,7 @@ public class QueueExample {
         try {
             queue.remove();
         } catch (NoSuchElementException e) {
-            System.out.println("由于顶端没有元素所以 reovme 方法会抛出异常");
+            System.out.println("由于顶端没有元素所以 remove 方法会抛出异常");
         }
     }
 
