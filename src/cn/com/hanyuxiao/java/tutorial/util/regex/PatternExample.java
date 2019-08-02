@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
  *
  * @since 1.8
  */
-public class PatternExample {
+class PatternExample {
 
     public static void main(String[] args) {
         PatternExample example = new PatternExample();

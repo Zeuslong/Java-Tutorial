@@ -8,7 +8,7 @@ import java.io.PrintStream;
  * @author hanyuxiao
  * @since 1.8
  */
-public class RunnableExample {
+class RunnableExample {
     public static void main(String[] args) {
         RunnableExample runnableExample = new RunnableExample();
         runnableExample.run();
@@ -43,6 +43,7 @@ public class RunnableExample {
      * 这种使用 {@link java.lang.Runnable} 的方法是一种简便的写法，但是
      * 不是很适合在复杂的环境当中使用，适合于在一次性任务当中使用。
      */
+    @SuppressWarnings("Convert2Lambda")
     private void runWithRunnable() {
         // 在创建线程的时候，直接把 Runnable 当作参数传入，并在其中实现 run 方法
         Thread thread = new Thread(new Runnable() {

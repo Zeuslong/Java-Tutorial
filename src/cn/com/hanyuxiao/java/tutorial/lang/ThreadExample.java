@@ -6,7 +6,7 @@ package cn.com.hanyuxiao.java.tutorial.lang;
  * @author hanyuxiao
  * @since 1.8
  */
-public class ThreadExample {
+class ThreadExample {
     public static void main(String[] args) {
         ThreadExample threadExample = new ThreadExample();
         threadExample.start();

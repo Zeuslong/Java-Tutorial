@@ -10,7 +10,7 @@ import java.net.URL;
  * @author hanyuxiao
  * @since 1.8
  */
-public class ClassExample {
+class ClassExample {
 
     /**
      * helloStr 字符串，用于支持 getFieldObject() 与 getFieldObjectList() 方法展示示例
@@ -35,6 +35,7 @@ public class ClassExample {
      * 这个方法为创建 Class 这个类的对象提供参考，这里创建一个 Person
      * 类的 Class 对象。这三个方法创建出来的 Class 对象是同一个对象。
      */
+    @SuppressWarnings("InstantiatingObjectToGetClassObject")
     private void createClassObject() {
         // 通过类创建
         Class<ClassExample> classA = ClassExample.class;
@@ -86,6 +87,7 @@ public class ClassExample {
      * 获取 ClassExample 当中所有的方法列表。通常也是建议使用 getDeclaredMethods() 这个方法获取到这个类
      * 当中的所有的方法。
      */
+    @SuppressWarnings("ConstantConditions")
     private void getMethodObjectList() {
         // 获取 class 对象
         Class<ClassExample> targetClass = ClassExample.class;
@@ -124,6 +126,7 @@ public class ClassExample {
      * 获取 ClassExample 当中所有的属性列表。通常也是建议使用 getDeclaredFields 这个方法获取到这个类
      * 当中的所有的属性。
      */
+    @SuppressWarnings("ConstantConditions")
     private void getFieldObjectList() {
         Class<ClassExample> targetClass = ClassExample.class;
 

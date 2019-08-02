@@ -15,7 +15,8 @@ import java.util.concurrent.*;
  * @author hanyuxiao
  * @since 1.8
  */
-public class ExecutorsExample {
+@SuppressWarnings("unused")
+class ExecutorsExample {
     public static void main(String[] args) {
         ExecutorsExample executorsExample = new ExecutorsExample();
         executorsExample.newSingleThreadExecutor();

@@ -23,7 +23,7 @@ package cn.com.hanyuxiao.java.tutorial.lang;
  * 对 String 当中的 char[] 中的 char 依次进行查表操作并转化成为 byte，这也就导致了 CPU 的负荷
  * 较大，所以在性能要求比较高的情况下，可以提前缓存由 String 解码成为的 byte[] 用于复用。
  */
-public class StringExample {
+class StringExample {
 
     public static void main(String[] args) {
         StringExample example = new StringExample();
@@ -43,6 +43,7 @@ public class StringExample {
      * C 组测试中，通过 new 创建一个字符串对象，另外通过直接用字面量方式获得字符串，所以
      * 两者 == 返回 false。
      */
+    @SuppressWarnings({"StringOperationCanBeSimplified", "ConstantConditions", "StringEquality"})
     private void equals() {
         // A 组测试。
         String a = new String("hello world");

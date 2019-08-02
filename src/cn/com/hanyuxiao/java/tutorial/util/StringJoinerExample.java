@@ -10,7 +10,7 @@ import java.util.StringJoiner;
  * StringJoiner 的出现其实是为了简化我们对 {@link StringBuilder} 在某些方面的使用，同时也是
  * 支撑 Stream 操作的一个渐变实现，可以参考 {@link java.util.stream.Collectors#joining()} 方法。
  */
-public class StringJoinerExample {
+class StringJoinerExample {
 
     public static void main(String[] args) {
         StringJoinerExample example = new StringJoinerExample();

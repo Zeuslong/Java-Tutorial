@@ -9,5 +9,5 @@ package cn.com.hanyuxiao.java.tutorial.util;
  * {@link java.util.Objects} 的设计是为了在不需要极限性能优化时，便于程序的阅读，同时
  * 增加了一些关于空指针异常的防范。
  */
-public class ObjectsExample {
+class ObjectsExample {
 }

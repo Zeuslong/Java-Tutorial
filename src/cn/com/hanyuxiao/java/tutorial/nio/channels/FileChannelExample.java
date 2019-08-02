@@ -19,7 +19,7 @@ import java.util.Set;
  * @author hanyuxiao
  * @since 1.8
  */
-public class FileChannelExample {
+class FileChannelExample {
 
     public static void main(String[] args) {
         FileChannelExample example = new FileChannelExample();
@@ -37,6 +37,7 @@ public class FileChannelExample {
      *
      * @since 1.7
      */
+    @SuppressWarnings("unused")
     private void create() {
         try {
             // 查找文件路径
@@ -71,6 +72,7 @@ public class FileChannelExample {
      *
      * @since 1.4
      */
+    @SuppressWarnings("unused")
     private void createByFileOutputStream() {
         try {
             String pathStr = Objects.requireNonNull(

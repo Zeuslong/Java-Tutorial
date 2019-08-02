@@ -11,7 +11,7 @@ import java.nio.ByteBuffer;
  *
  * 在这里，不对子类做太多详细的解释，只是写一些 ByteBuffer 当中定义的方法的使用。
  */
-public class ByteBufferExample {
+class ByteBufferExample {
 
     public static void main(String[] args) {
         ByteBufferExample example = new ByteBufferExample();
@@ -72,5 +72,4 @@ public class ByteBufferExample {
         // 读出全部数据，直接返回了其中保存的数组
         System.out.println("\n" + new String(byteBuffer.array()));
     }
-
 }

@@ -7,7 +7,7 @@ package cn.com.hanyuxiao.java.tutorial.io;
  * @author hanyuxiao
  * @since 1.0
  */
-public class PrintStreamExample {
+class PrintStreamExample {
 
     public static void main(String[] args) {
         PrintStreamExample example = new PrintStreamExample();
@@ -21,7 +21,7 @@ public class PrintStreamExample {
     /**
      * 主要是在 System.out.printf() 当中使用 %s 的一些技巧。
      */
-    public void printf_s() {
+    private void printf_s() {
         String name = "world";
         // 输出 hello world
         System.out.printf("hello %s\n", name);
@@ -30,28 +30,29 @@ public class PrintStreamExample {
     /**
      * 输出 boolean 类型的符号。
      */
-    public void printf_b() {
+    private void printf_b() {
         System.out.printf("%b\n", true);
     }
 
     /**
      * 输出整数。
      */
-    public void printf_d() {
+    private void printf_d() {
         System.out.printf("%d\n", 100);
     }
 
     /**
      * 输出固定长度为 10 的整数。
      */
-    public void printf_length() {
+    private void printf_length() {
         System.out.printf("%10d\n", 100);
     }
 
     /**
      * 输出一个缩进符。
      */
-    public void printf_t() {
+    @SuppressWarnings("RedundantStringFormatCall")
+    private void printf_t() {
         System.out.printf("\thello world\n");
     }
 }

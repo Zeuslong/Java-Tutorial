@@ -28,7 +28,7 @@ public class EnumExample {
         /**
          * 定义了这个枚举类型持有的一个变量，用来描述枚举类型的书面含义
          */
-        private String description;
+        private final String description;
 
         /**
          * 构造方法
@@ -40,7 +40,7 @@ public class EnumExample {
         /**
          * 获取枚举类型的书面含义
          */
-        public String getDescription () {
+        String getDescription() {
             return this.description;
         }
 
@@ -51,31 +51,46 @@ public class EnumExample {
     }
 
     public static void main(String[] args) {
-        /**
-         * 分别输出 Human 枚举当中的枚举，这里默认会调用枚举的 toString() 方法
-         */
-        System.out.println(Human.man);
-        System.out.println(Human.woman);
+        EnumExample example = new EnumExample();
+        example.forEach();
+        example.equals();
+        example.customMethod();
+        example.toStringE();
+    }
 
-        /**
-         * 分别调用枚举当中自定义的方法
-         */
-        System.out.println(Human.man.getDescription());
-        System.out.println(Human.woman.getDescription());
-
-        /**
-         * 两种匹配枚举是否相等的办法
-         * 在第一种方法是因为所有的枚举都继承了 {@link java.lang.Enum} 这个类
-         * 第二个方法是因为所有的枚举在内存当中是单一的，所以可以直接用 == 判断
-         */
-        System.out.println(Human.man.equals(Human.man));
-        System.out.println(Human.man == Human.man);
-
-        /**
-         * 遍历枚举当中的所有属性
-         */
+    /**
+     * 该方法演示了如何遍历枚举类当中定义的所有枚举。
+     */
+    private void forEach () {
         for (Human e : Human.values()) {
             System.out.println(e);
         }
+    }
+
+    /**
+     * 展示了判断两个枚举是否相等的示例代码。
+     * 在第一种方法是因为所有的枚举都继承了 {@link java.lang.Enum} 这个类
+     * 第二个方法是因为所有的枚举在内存当中是单一的，所以可以直接用 == 判断
+     */
+    @SuppressWarnings({"ConstantConditions", "EqualsWithItself"})
+    private void equals() {
+        System.out.println(Human.man.equals(Human.man));
+        System.out.println(Human.man == Human.man);
+    }
+
+    /**
+     * 调用枚举当中自定义的方法。
+     */
+    private void customMethod() {
+        System.out.println(Human.man.getDescription());
+        System.out.println(Human.woman.getDescription());
+    }
+
+    /**
+     * 分别输出 Human 枚举当中的枚举，这里默认会调用枚举的 toString() 方法。
+     */
+    private void toStringE() {
+        System.out.println(Human.man);
+        System.out.println(Human.woman);
     }
 }

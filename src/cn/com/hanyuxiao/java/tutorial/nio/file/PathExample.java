@@ -9,7 +9,7 @@ import java.nio.file.Path;
  * @author hanyuxiao
  * @since 1.8
  */
-public class PathExample {
+class PathExample {
 
     public static void main(String[] args) {
         PathExample example = new PathExample();

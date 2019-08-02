@@ -13,7 +13,7 @@ import java.util.stream.Stream;
  * @since 1.8
  * @author hanyuxiao
  */
-public class StreamExample {
+class StreamExample {
 
     /**
      * 参考代码的启动类
@@ -32,21 +32,19 @@ public class StreamExample {
      * 对元素进行判断，然后把符合条件的元素封装成一个新的 {@link java.util.stream.Stream}
      * 并返回。
      *
+     * 通过 {@link java.util.stream.Stream#filter} 这样一个方法来筛选出一个 list 当中
+     * 所有大于 5 的数据，并且用这个方法返回的 {@link java.util.stream.Stream#forEach}
+     * 方法来遍历塞选过后的结果
+     *
      * @since 1.8
      * @author hanyuxiao
      */
     private void filter() {
-        /**
-         * 通过 {@link java.util.stream.Stream#filter} 这样一个方法来筛选出一个 list 当中
-         * 所有大于 5 的数据，并且用这个方法返回的 {@link java.util.stream.Stream#forEach}
-         * 方法来遍历塞选过后的结果
-         */
+        // 初始化数据
         Integer[] intArray = {1,2,3,4,5,6,7,8,9};
         List<Integer> listOfInteger = new ArrayList<>(Arrays.asList(intArray));
-
         // 筛选出大于 5 的数据
         Stream<Integer> resultOfFilter = listOfInteger.stream().filter(integer -> integer > 5);
-
         resultOfFilter.forEach(integer -> System.out.printf("%d ", integer));
     }
 
@@ -59,6 +57,7 @@ public class StreamExample {
      * @since 1.8
      * @author hanyuxiao
      */
+    @SuppressWarnings("Convert2MethodRef")
     private void map() {
         String[] lowerCaseArray = {"hello", "world"};
         List<String> lowerCaseStr = new ArrayList<>(Arrays.asList(lowerCaseArray));
@@ -76,21 +75,21 @@ public class StreamExample {
      * ToArray 方法会把一个 {@link java.util.stream.Stream} 对象当中包含的所有元素
      * 都转化成一个数组对象。
      *
+     * 通过 {} 的方式来构建一个数组，然后再通过 {@link java.util.Arrays#asList(Object[])}
+     * 构建一个 {@link java.util.List}，再通过 {@link java.util.List} 对象获取到
+     * {@link java.util.stream.Stream}，并通过 {@link java.util.stream.Stream#toArray(IntFunction)}
+     * 还原之前我们得到的那个数组。
+     *
      * @since 1.8
      * @author hanyuxiao
      */
+    @SuppressWarnings("SimplifyStreamApiCallChains")
     private void toArray() {
-        /**
-         * 通过 {} 的方式来构建一个数组，然后再通过 {@link java.util.Arrays#asList(Object[])}
-         * 构建一个 {@link java.util.List}，再通过 {@link java.util.List} 对象获取到
-         * {@link java.util.stream.Stream}，并通过 {@link java.util.stream.Stream#toArray(IntFunction)}
-         * 还原之前我们得到的那个数组。
-         */
+        // 初始化数据
         Integer[] intArray = {1,2,3,4,5,6,7,8,9};
         List<Integer> listOfInteger = new ArrayList<>(Arrays.asList(intArray));
-
         Integer[] newArray = listOfInteger.stream().toArray(Integer[]::new);
-
+        // 遍历
         for (Integer integer : newArray) {
             System.out.printf("%d ", integer);
         }

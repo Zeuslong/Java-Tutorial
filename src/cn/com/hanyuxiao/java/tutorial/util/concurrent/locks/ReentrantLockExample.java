@@ -5,7 +5,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * {@link java.util.concurrent.locks.ReentrantLock} 的使用示例。
  */
-public class ReentrantLockExample {
+class ReentrantLockExample {
 
     /**
      * 这是标准的锁申明的方法。

@@ -20,7 +20,7 @@ import java.util.Queue;
  *  @see java.util.concurrent.LinkedBlockingQueue
  *  @see java.util.concurrent.PriorityBlockingQueue
  */
-public class QueueExample {
+class QueueExample {
     public static void main(String[] args) {
         QueueExample example = new QueueExample();
         example.addE();
@@ -100,6 +100,7 @@ public class QueueExample {
      *
      * 如果队列为空，获取失败的时候会抛出一个异常 {@link NoSuchElementException}。
      */
+    @SuppressWarnings("ResultOfMethodCallIgnored")
     private void elementE() {
         Queue<String> queue = new LinkedList<>(Collections.singleton("hello world"));
         // 查看顶端元素
@@ -119,6 +120,7 @@ public class QueueExample {
      *
      * 如果队列为空，获取失败的时候，会返回 null。
      */
+    @SuppressWarnings("ConstantConditions")
     private void peekE() {
         Queue<String> queue = new LinkedList<>(Collections.singleton("hello world"));
         // 查看顶端元素

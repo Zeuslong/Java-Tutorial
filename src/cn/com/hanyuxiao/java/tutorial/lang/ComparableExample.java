@@ -3,7 +3,7 @@ package cn.com.hanyuxiao.java.tutorial.lang;
 /**
  * {@link java.lang.Comparable} 的使用。
  */
-public class ComparableExample {
+class ComparableExample {
 
     public static void main(String[] args) {
         Obj little = new Obj(1);
@@ -19,10 +19,11 @@ class Obj implements Comparable<Obj> {
 
     private int number;
 
-    public Obj(int number) {
+    Obj(int number) {
         this.number = number;
     }
 
+    @SuppressWarnings("WeakerAccess")
     public int getNumber() {
         return number;
     }

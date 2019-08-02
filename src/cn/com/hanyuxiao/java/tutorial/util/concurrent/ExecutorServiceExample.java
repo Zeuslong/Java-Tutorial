@@ -11,7 +11,7 @@ import java.util.concurrent.Executors;
  * @author hanyuxiao
  * @since 1.8
  */
-public class ExecutorServiceExample {
+class ExecutorServiceExample {
     public static void main(String[] args) {
         ExecutorServiceExample executorServiceExample = new ExecutorServiceExample();
         executorServiceExample.submit();
