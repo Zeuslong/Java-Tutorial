@@ -28,6 +28,7 @@ public class StringExample {
     public static void main(String[] args) {
         StringExample example = new StringExample();
         example.equals();
+        example.format();
     }
 
     /**
@@ -42,7 +43,7 @@ public class StringExample {
      * C 组测试中，通过 new 创建一个字符串对象，另外通过直接用字面量方式获得字符串，所以
      * 两者 == 返回 false。
      */
-    public void equals() {
+    private void equals() {
         // A 组测试。
         String a = new String("hello world");
         String b = new String("hello world");
@@ -55,5 +56,13 @@ public class StringExample {
         String e = new String("hello world");
         String f = "hello world";
         System.out.printf("equals : %b, == : %b\n", e.equals(f), e == f);
+    }
+
+    /**
+     * format 可以把字符串当中一些格式化的占位符进行填充，例如 hello %s 中的 %s 就可以被填充。
+     */
+    private void format() {
+        String str = "hello %s";
+        System.out.println(String.format(str, "world"));
     }
 }
