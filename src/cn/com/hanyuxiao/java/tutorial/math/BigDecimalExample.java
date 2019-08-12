@@ -14,6 +14,11 @@ public class BigDecimalExample {
     public static void main(String[] args) {
         BigDecimalExample example = new BigDecimalExample();
         example.construct();
+        example.add();
+        example.subtract();
+        example.multiply();
+        example.divide();
+        example.setScale();
     }
 
     /**
@@ -37,5 +42,71 @@ public class BigDecimalExample {
         System.out.println("float 来构造 ： " + fromFloat);
         System.out.println("String 来构造： " + fromString);
         System.out.println("float 转 String 来构造 ： " + fromStringOfFloat);
+    }
+
+    /**
+     * 提供了 BigDecimal 这个类如何让其与其它的数相加。
+     * base 是被加数，factor 是加数。
+     */
+    private void add() {
+        BigDecimal base   = new BigDecimal(String.valueOf(1.2));
+        BigDecimal factor = new BigDecimal(String.valueOf(1.3));
+        System.out.println(base + "+" + factor + "=" + base.add(factor));
+    }
+
+    /**
+     * 提供了 BigDecimal 这个类的减法使用方式。
+     * base 是被减数，factor 是减数。
+     */
+    private void subtract() {
+        BigDecimal base = new BigDecimal(String.valueOf(1.2));
+        BigDecimal factor = new BigDecimal(String.valueOf(1.3));
+        System.out.println(base + "-" + factor + "=" + base.subtract(factor));
+    }
+
+    /**
+     * 提供了 BigDecimal 这个类的乘法使用方法。
+     * base 是被乘数，factor 是乘数。
+     */
+    private void multiply() {
+        BigDecimal base = new BigDecimal(String.valueOf(1.2));
+        BigDecimal factor = new BigDecimal(String.valueOf(1.3));
+        System.out.println(base + "*" + factor + "=" + base.multiply(factor));
+    }
+
+    /**
+     * 提供了 BigDecimal 这个类的除法使用方法。
+     * base 是被除数，factor 是除数。
+     */
+    private void divide() {
+        BigDecimal base = new BigDecimal(String.valueOf(1.2));
+        BigDecimal factor = new BigDecimal(String.valueOf(0.6));
+        System.out.println(base + "/" + factor + "=" + base.divide(factor));
+    }
+
+    /**
+     * 提供了 BigDecimal 精确到几位小数的使用方法。
+     *
+     * setScale(int, int); 提供了两个参数，第一个是保留的小数的位数；第二个是如何处理多余的数字。
+     *
+     * @see BigDecimal#ROUND_UP 表示之后需要保留的小数点后面不全部为 0，那么保留的小数点的末尾就会加 1.
+     * @see BigDecimal#ROUND_DOWN 不管怎么样，小数点末尾都不会加 1，也就是相当于直接舍去。
+     * @see BigDecimal#ROUND_CEILING 接近正无穷大的舍入模式。如果该 BigDecimal 为正数，那就表现和 ROUND_UP 一样，
+     * 如果为负数就和 ROUND_DOWN 一样。
+     * @see BigDecimal#ROUND_FLOOR 接近负无穷大的舍入模式。如果 BigDecimal 为正数，那就表现和 ROUND_DOWN 一样，
+     * 如果为负数就和 ROUND_UP 一样。
+     * @see BigDecimal#ROUND_HALF_UP 四舍五入。
+     * @see BigDecimal#ROUND_HALF_DOWN 五舍六入，即五以及五以下就舍去。
+     * @see BigDecimal#ROUND_HALF_EVEN 银行家舍入法。当舍去位的数值小于5时，直接舍去该位；当舍去位的数值大于等于6时，在舍
+     * 去该位的同时向前位进一；当舍去位的数值等于5且（5后不为空且非全0）时，在舍去该位的同时向前位进一；当舍去的数值
+     * 等于5且（5后为空或全0）时，如果前位数值为奇，则在舍去该位的同时向前位进一，如果前位数值为偶，则直接舍去该位。
+     * PS： 大部分软件工程计算钱使用的都是这种方法。
+     * @see BigDecimal#ROUND_UNNECESSARY 判断是否是一个精确的舍入模式，如果不需要舍入，那么就不会产生异常，如果需要进行
+     * 舍入计算就会抛出 {@code ArithmeticException} 异常。
+     */
+    private void setScale() {
+        BigDecimal base = new BigDecimal(String.valueOf(1.3456789));
+        BigDecimal newBase = base.setScale(2, BigDecimal.ROUND_HALF_UP);
+        System.out.println(newBase);
     }
 }
