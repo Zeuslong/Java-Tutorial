@@ -15,6 +15,7 @@ public class OptionalExample {
         OptionalExample example = new OptionalExample();
         example.construct();
         example.isPresent();
+        example.ifPresent();
     }
 
     /**
@@ -39,5 +40,13 @@ public class OptionalExample {
     private void isPresent() {
         Optional<Object> optional = Optional.of(new Object());
         System.out.printf("这个对象是否不为 null ： %b\n", optional.isPresent());
+    }
+
+    /**
+     * ifPresent 表示如果 Optional 当中 value 不为空，那么就会执行 Consumer 方法。
+     */
+    private void ifPresent() {
+        Optional<Object> optional = Optional.ofNullable(new Object());
+        optional.ifPresent(param -> System.out.println(param));
     }
 }
